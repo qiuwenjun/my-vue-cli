@@ -1,0 +1,45 @@
+{
+  "name": "qwj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js",
+    "babel_build": "babel src/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^1.0.0",
+    "extract-loader": "^2.0.1",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "style-loader": "^0.22.1",
+    "url-loader": "^1.1.1",
+    "vue-html-loader": "^1.2.4",
+    "vue-loader": "^15.4.0",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  }
+}
