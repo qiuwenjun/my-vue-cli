@@ -6,9 +6,12 @@ const isDev=process.env.NODE_ENV=='development';
 const config={
     mode:isDev?'development':'production',
     target:'web',
-    entry:path.resolve(__dirname,'./src/main.js'),
+    entry:{
+        home:path.resolve(__dirname,'./src/main.js'),     //测试主入口
+        music:path.resolve(__dirname,'./src/index.js')     //vue入口
+    },
     output:{
-        filename:'test.js',
+        filename:'js/[chunkhash].js',
         path:path.resolve(__dirname,'dist')
     },
     plugins:[
@@ -27,15 +30,17 @@ const config={
         rules:[
             {
                 test:/\.vue$/,
-                use:["vue-loader"]
+                use:["vue-loader"],
+               exclude:[path.resolve(__dirname,"node_modules"),]
             },
             {
-                test:/\.less$/,
+                test:/\.(less|css)$/,
                 use:[
                     "style-loader",
                     "css-loader",
                     "less-loader"
-                ]
+                ],
+               exclude:[path.resolve(__dirname,"node_modules"),]
             },
             {
                 test:/\.(png|jpg|jpeg|gif|svg)$/,
@@ -45,8 +50,9 @@ const config={
                         options: {
                           limit: 1024
                         }
-                      }
-                ]
+                    }
+                ],
+               exclude:[path.resolve(__dirname,"node_modules"),]
             },
            {
                test:/\.js$/,
@@ -55,10 +61,11 @@ const config={
                       loader: "babel-loader",
                       options:{
                           plugins:["transform-es2015-arrow-functions"],
-                          presets:["env"]
-                      }
+                          presets:["env"],
+                      },
                   }
-               ]
+               ],
+               exclude:[path.resolve(__dirname,"node_modules"),]
            }
         ]
     },

@@ -1,17 +1,21 @@
 <template>
     <div id="app">
-        <h1>欢迎学习webpack+vue</h1>
-        <img src="./assets/images/logo.png">
-        <div class="">6666-server</div>
-        <h2></h2>
+         <h1><img src="./assets/images/logo.png"></h1>
+        <index :data="data" />
     </div>
 </template>
 
 <script>
+ import index from './root/index.vue';
 export default {
     name:'app',
     data(){
-        return {}
+        return {
+            data:[1,2,3,4,5]
+        }
+    },
+    components:{
+        index
     }
 }
 </script>
